@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
+import Symbols from "./symbolList"
 
 @Component({
   selector: 'app-stockslist',
@@ -7,7 +8,7 @@ import { FormControl, Validators } from '@angular/forms';
   styleUrls: ['./stockslist.component.css']
 })
 export class StockslistComponent implements OnInit {
-  
+  symbols = Symbols 
   stocks : any = []
   searched_stock = new FormControl(""); 
   constructor() { }
