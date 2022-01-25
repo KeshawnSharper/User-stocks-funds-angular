@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-stockslist',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./stockslist.component.css']
 })
 export class StockslistComponent implements OnInit {
-  stocks = [1,2,3,4,5]
+  
+  stocks : any = []
+  searched_stock = new FormControl(""); 
   constructor() { }
 
   ngOnInit(): void {
   }
-
+  addNewStock = () => {
+    this.stocks = [...this.stocks,{id:this.stocks.length > 0 ? this.stocks[this.stocks.length - 1].id +  1 : 0,prev_price:-500,company:this.searched_stock.value,price:-500}]
+    this.searched_stock.setValue("")
+} 
 }

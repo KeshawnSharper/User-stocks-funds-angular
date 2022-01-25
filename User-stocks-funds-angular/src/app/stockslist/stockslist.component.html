@@ -1,3 +1,5 @@
+<input [formControl]="searched_stock">
+<button (click)="addNewStock()">Add Stock</button>
 <div class="grid-container">
     <div class="flip-card grid-item" *ngFor="let stock of stocks">
 
