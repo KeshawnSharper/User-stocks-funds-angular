@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-stock',
@@ -6,10 +7,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./stock.component.css']
 })
 export class StockComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
+  @Input() stock: any
+  constructor(private http:HttpClient) { }
+  getStockData(){
+    this.http.get<any>(`https://yahoo-finance-api.vercel.app/${this.stock.company}`).subscribe(data => {
+    let meta = data.chart.result[0].meta   
+      this.stock = {id:this.stock.id,prev_price:meta.previousClose,company:this.stock.company,price:meta.regularMarketPrice}
+      console.log(this.stock)
+  })
+}
+    // Loop through each stock in the stocks state and change it's value 
+    
+       
+            
+  ngOnInit(){
+    this.getStockData()
+    setInterval(() => {
+      this.getStockData()
+  },5000)
   }
 
 }
