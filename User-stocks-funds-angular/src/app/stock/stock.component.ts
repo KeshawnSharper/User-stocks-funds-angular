@@ -9,7 +9,6 @@ export class StockComponent implements OnInit {
   @Input() stock: any
   @Input() removeStock:any
   @Input() changeStock:any
-  @Input() rendredStock: any
   @Input() stocks: any
 
   constructor(private http:HttpClient) { }
