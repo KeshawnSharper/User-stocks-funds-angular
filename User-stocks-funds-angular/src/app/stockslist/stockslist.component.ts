@@ -18,5 +18,13 @@ export class StockslistComponent implements OnInit {
   addNewStock = () => {
     this.stocks = [...this.stocks,{id:this.stocks.length > 0 ? this.stocks[this.stocks.length - 1].id +  1 : 0,prev_price:-500,company:this.searched_stock.value,price:-500}]
     this.searched_stock.setValue("")
+    console.log(this.stocks)
 } 
+removeStock(id:any){
+  console.log(id,this.stocks)
+  this.stocks = this.stocks.filter((stock:any) => stock.id !== id)
+}
+changeStock(id:any){
+  this.stocks
+}
 }

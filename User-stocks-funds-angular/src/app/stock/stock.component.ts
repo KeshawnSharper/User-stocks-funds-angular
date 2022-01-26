@@ -7,6 +7,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class StockComponent implements OnInit {
   @Input() stock: any
+  @Input() removeStock:any
   constructor(private http:HttpClient) { }
   getStockData(){
     this.http.get<any>(`https://yahoo-finance-api.vercel.app/${this.stock.company}`).subscribe(data => {
@@ -15,10 +16,7 @@ export class StockComponent implements OnInit {
       console.log(this.stock)
   })
 }
-    // Loop through each stock in the stocks state and change it's value 
-    
-       
-            
+    // Loop through each stock in the stocks state and change it's value         
   ngOnInit(){
     this.getStockData()
     setInterval(() => {
