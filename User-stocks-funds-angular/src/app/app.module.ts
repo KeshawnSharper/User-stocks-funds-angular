@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { StockslistComponent } from './stockslist/stockslist.component';
 import { StockComponent } from './stock/stock.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { LinkComponent } from './link/link.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     StockslistComponent,
-    StockComponent
+    StockComponent,
+    LinkComponent
   ],
   imports: [
     BrowserModule,

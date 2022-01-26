@@ -1,4 +1,4 @@
-    <div class="flip-card-inner">
+    <div class="flip-card-inner" [style.background-color]="stock.price > stock.prev_price? 'green' : (stock.price < stock.prev_price ? 'red' :  'gray')">
       <div class="flip-card-front">
         <h1>{{stock.company}}</h1>
         <p>{{stock.price}}</p>

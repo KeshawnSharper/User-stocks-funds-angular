@@ -5,6 +5,6 @@
 <button (click)="addNewStock()"> Add Stock</button>
 <div class="grid-container">
     <div class="flip-card grid-item" *ngFor="let stock of stocks">
-<app-stock [stock]=stock [removeStock]=removeStock></app-stock>
+<app-stock [stock]=stock [stocks]=stocks [rendredStock]=stock [removeStock]=removeStock [changeStock]=changeStock></app-stock>
     </div>
     </div>
