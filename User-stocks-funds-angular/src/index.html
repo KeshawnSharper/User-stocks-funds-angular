@@ -8,6 +8,21 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
+  <body>
+    <script src="https://cdn.plaid.com/link/v2/stable/link-initialize.js"></script>
+    <script>
+        const handler = Plaid.create({
+      token: localStorage.getItem("link_token"),
+      onSuccess: (public_token, metadata) => {},
+     onLoad: () => {},
+     onExit: (err, metadata) => {},
+     onEvent: (eventName, metadata) => {},
+    //required for OAuth; not using OAuth, set to null or omit:
+      receivedRedirectUri: "https://localhost:51163/",
+    });
+    </script>
+
+   
   <app-root></app-root>
 </body>
 </html>

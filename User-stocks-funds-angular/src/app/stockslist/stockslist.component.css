@@ -1,5 +1,13 @@
 
+.stocksList{
+  margin: 0 auto;
+width: 100%;
+text-align:center;
 
+}
+.stockslist input{
+text-align:center
+}
 .round {
     width: 100%;
     border-radius: 15px;
@@ -8,31 +16,24 @@
 }
 
 
-.corner {
-    position: absolute;
-    top: 3px;
-    left: 5px;
-    height: 20px;
-    width: 20px;
-    z-index: 10;
-    border-radius: 10px;
-    border: none;
-    background: #000; /* Set the bg image here. with "no-repeat" */
-}
 
-.search {
-    
+
+/* .search {
     display: inline-flex;
-}
+    margin: 0 auto;
+width: 100%;
+text-align:center
+} */
 
 .flip-card {
     background-color: transparent;
     width: 300px;
     height: 300px;
-    perspective: 1000px;
+    
+    /* perspective: 1000px; */
   }
   
-  .flip-card-inner {
+  /* .flip-card-inner {
     position: relative;
     width: 100%;
     height: 100%;
@@ -40,7 +41,7 @@
     transition: transform 0.6s;
     transform-style: preserve-3d;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  }
+  } */
   
   .flip-card:hover .flip-card-inner {
     transform: rotateY(180deg);
@@ -48,23 +49,26 @@
 
   }
   
-  .flip-card-front, .flip-card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-  }
+
   
   .flip-card-front {
     color: black;
   }
+  .pages-div{
+    display: inline-flex;
+    text-align: center;
+}
+.pages-div p{
+    color: lightskyblue;
+    margin-right: 5px;
+    cursor: pointer;
+}
   
-  .flip-card-back {
+  /* .flip-card-back {
     background-color: black;
     color: white;
     transform: rotateY(180deg);
-  }
+  } */
  
   .grid-container {
     display: grid;
@@ -80,19 +84,27 @@
     font-size: 30px;
     text-align: center;
   }
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 700px) {
     .grid-container {
+        margin-left: 180px;
+        grid-template-columns: auto;
+  }
+  }
+
+  @media only screen and (min-width: 850px) {
+    .grid-container {
+        margin-left: 180px;
         grid-template-columns: auto auto;
   }
   }
-  @media only screen and (min-width: 992px) {
-    .grid-container {
-        grid-template-columns: auto auto auto;
-  }
-  }
+
+  
+  
+  
   @media only screen and (min-width: 1200px) {
     .grid-container {
-        grid-template-columns: auto auto auto auto;
+      margin-left: 180px;
+        grid-template-columns: auto auto auto ;
   }
   }
 

@@ -1,0 +1,22 @@
+.transactions-list {
+margin: 0 auto;
+width: 100%;
+text-align:center;
+margin-left:10px;
+}
+.pages-div{
+    display: inline-flex;
+    text-align: center;
+}
+.pages-div p{
+    color: lightskyblue;
+    margin-right: 5px;
+    cursor: pointer;
+}
+h1{
+    text-align: center;
+}
+input{
+    margin: 0 auto;
+}
+

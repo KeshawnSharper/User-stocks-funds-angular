@@ -1,0 +1,20 @@
+
+<div class="transactions-list">
+    <app-balance></app-balance>
+
+<h1>Transactions</h1>
+
+<input [formControl]="value">
+<button (click)="searchTransactions()"> Search By Name </button>
+
+<app-transaction [transaction]=transaction *ngFor="let transaction of pagedTransactions"></app-transaction>
+            <h3>Change Page:</h3>
+<div class="pages-div">
+            
+    <p *ngFor="let page of pages" (click)="handlePage(page)" class="page" [style.color]="page == currentPage ? 'lightblue' : 'black'">{{page}} </p>
+</div>
+</div>
+
+
+
+

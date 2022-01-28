@@ -1,12 +1,7 @@
     <div class="flip-card-inner" [style.background-color]="stock.price > stock.prev_price? 'green' : (stock.price < stock.prev_price ? 'red' :  'gray')">
       <div class="flip-card-front">
         <h1>{{stock.company}}</h1>
-        <p>{{stock.price}}</p>
+        <p>{{price}}</p>
         <button (click)="removeStock(stock.id)">Close</button>
-      <div class="flip-card-back">
-        <h6>Hi</h6>
-            <h6>HI</h6>
-            <h6>Hi</h6>
-            <h6>Hi</h6>
       </div>
   </div>

@@ -10,6 +10,7 @@ export class StockComponent implements OnInit {
   @Input() removeStock:any
   @Input() changeStock:any
   @Input() stocks: any
+  price:any 
 
   constructor(private http:HttpClient) { }
   getStockData = () => {
@@ -17,6 +18,10 @@ export class StockComponent implements OnInit {
     let meta = data.chart.result[0].meta  
     let updatedStock = {id:this.stock.id,prev_price:meta.previousClose,company:this.stock.company,price:meta.regularMarketPrice} 
     this.changeStock(updatedStock)
+    this.price = updatedStock.price.toLocaleString('en-US', {
+      style: 'currency',
+      currency: 'USD',
+    })
       this.stock = updatedStock
       
   })
